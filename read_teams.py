@@ -5,10 +5,10 @@ from datetime import datetime
 
 class ReadTeams:
     CSV_FIELDS = 8
-    CSV_FIRST_FIELD = 1
+    CSV_FIRST_FIELD = 0
 
     # Reads from .csv file in the following format
-    # Team Name, Mentor1, Mentor2, Mentor3, Mentor4, Mentor5, Room, DD/MM/YY HH:MM
+    # Team Name, Room, Mentor1, Mentor2, Mentor3, Mentor4, Mentor5, DD/MM/YY HH:MM
     def read_csv(self, file_name):
         csv_file = open(file_name, 'r')
         reader = csv.reader(csv_file)
@@ -16,11 +16,11 @@ class ReadTeams:
         teams = []
 
         for team in reader:
-            name = self.__fix_whitespaces(team[0])
+            name = self.__fix_whitespaces(team[self.CSV_FIRST_FIELD])
 
-            room = self.__fix_whitespaces(team[self.CSV_FIELDS - 2])
+            room = self.__fix_whitespaces(team[self.CSV_FIRST_FIELD + 1])
 
-            mentors = team[self.CSV_FIRST_FIELD:self.CSV_FIELDS - 2]
+            mentors = team[self.CSV_FIRST_FIELD + 2:self.CSV_FIELDS - 1]
             mentors = self.__fix_list_whitespaces(mentors)
 
             time = self.__fix_whitespaces(team[self.CSV_FIELDS - 1])
