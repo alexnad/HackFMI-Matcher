@@ -35,7 +35,7 @@ class Matcher:
             return 1
 
         if team_1_choise == team_2_choise:
-            if team_1_application_time <= team_2_application_time:
+            if team_1_application_time >= team_2_application_time:
                 return 1
 
         return -1
