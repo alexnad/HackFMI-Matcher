@@ -7,6 +7,8 @@ class ReadTeams:
     CSV_FIELDS = 8
     CSV_FIRST_FIELD = 1
 
+    # Reads from .csv file in the following format
+    # Team Name | Mentor1 | Mentor2 | Mentor3 | Mentor4 | Mentor5 | Room | DD/MM/YY HH:MM
     def read_csv(self, file_name):
         csv_file = open(file_name, 'r')
         reader = csv.reader(csv_file, delimiter='|')
@@ -29,6 +31,7 @@ class ReadTeams:
         csv_file.close()
         return teams
 
+    # Removes start and end whitespaces from a string
     def __fix_whitespaces(self, string):
         return string.strip()
 
