@@ -1,4 +1,4 @@
 HackFMI-Matcher
 ===============
 
-Program patch teams with mentors for HackFMI.
+Program matches teams with mentors (for HackFMI).
