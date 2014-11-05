@@ -8,7 +8,7 @@ class Team:
 
     def get_choise(self, mentor):
         if mentor in self.mentors:
-            return self.mentors.index(mentor)
+            return self.mentors.index(mentor) + 1
         return False
 
     def __repr__(self):

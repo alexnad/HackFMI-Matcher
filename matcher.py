@@ -19,7 +19,7 @@ class Matcher:
         return mentors
 
     def add_teams_to_mentor(self, mentor):
-        teams = [team for team in self.teams if isinstance(team.get_choise(mentor.name), int)]
+        teams = [team for team in self.teams if team.get_choise(mentor.name)]
         sorted_teams = sorted(teams, key=cmp_to_key(self.__compare_teams))
         for team in sorted_teams:
             if not mentor.add_team(team):
