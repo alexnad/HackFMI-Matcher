@@ -13,4 +13,3 @@ def get_mentors():
     r = re.compile('### (.*?)\n')
     result = r.findall(markdown)
     return result
-
