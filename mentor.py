@@ -10,3 +10,7 @@ class Mentor:
             self.teams.append(team_name)
             return True
         return False
+
+    def __repr__(self):
+        return self.name
+

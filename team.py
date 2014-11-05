@@ -10,3 +10,7 @@ class Team:
         if mentor in self.mentors:
             return self.mentors.index(mentor)
         return False
+
+    def __repr__(self):
+        return self.name
+
