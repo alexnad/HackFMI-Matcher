@@ -1,4 +1,5 @@
 class Team:
+
     def __init__(self, name, mentors, application_time):
         self.name = name
         self.mentors = mentors
