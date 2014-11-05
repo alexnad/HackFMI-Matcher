@@ -8,10 +8,10 @@ class ReadTeams:
     CSV_FIRST_FIELD = 1
 
     # Reads from .csv file in the following format
-    # Team Name | Mentor1 | Mentor2 | Mentor3 | Mentor4 | Mentor5 | Room | DD/MM/YY HH:MM
+    # Team Name, Mentor1, Mentor2, Mentor3, Mentor4, Mentor5, Room, DD/MM/YY HH:MM
     def read_csv(self, file_name):
         csv_file = open(file_name, 'r')
-        reader = csv.reader(csv_file, delimiter='|')
+        reader = csv.reader(csv_file)
 
         teams = []
 
