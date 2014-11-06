@@ -12,12 +12,20 @@ def main():
     matched_teams = Matcher(teams, mentor_names)
     list_of_mentors = matched_teams.match_mentors()
 
+    file = open('mentors.html', 'w')
+    html = ''
+    html += '<table border="1">\n'
     for mentor in list_of_mentors:
-        mentor
-        print('{}:'.format(mentor))
+        html += '  <tr>\n'
+        html += '    <th>{}</th>\n'.format(mentor)
         for team in mentor.teams:
-            print(team)
-        print()
+            html += '    <td><p>{}</p><p>{}</p></td>\n'.format(team, team.room)
+        html += '  </tr>\n'
+
+    html += '</table>'
+    file.write(html)
+    file.close()
 
 if __name__ == "__main__":
     main()
+

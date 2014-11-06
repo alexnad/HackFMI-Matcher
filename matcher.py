@@ -20,22 +20,22 @@ class Matcher:
 
     def add_teams_to_mentor(self, mentor):
         teams = [team for team in self.teams if team.get_choise(mentor.name)]
-        sorted_teams = sorted(teams, key=cmp_to_key(self.__compare_teams))
-        for team in sorted_teams:
+        teams = sorted(teams, key=cmp_to_key(self.__compare_teams))
+        for team in teams:
             if not mentor.add_team(team):
                 break
 
     def __compare_teams(self, team_1, team_2):
         team_1_choise = team_1.get_choise(self.current_mentor.name)
         team_1_application_time = team_1.application_time
-        team_2_choise = team_1.get_choise(self.current_mentor.name)
+        team_2_choise = team_2.get_choise(self.current_mentor.name)
         team_2_application_time = team_2.application_time
 
-        if team_1_choise > team_2_choise:
-            return 1
+        if team_1_choise < team_2_choise:
+            return -1
 
         if team_1_choise == team_2_choise:
-            if team_1_application_time >= team_2_application_time:
-                return 1
+            if team_1_application_time < team_2_application_time:
+                return -1
 
-        return -1
+        return 1
