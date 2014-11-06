@@ -15,6 +15,9 @@ def main():
     file = open('mentors.html', 'w')
     html = ''
     html += '<table border="1">\n'
+    html += '  <tr>\n'
+    html += '    <th>Mentors</th>\n'
+    html += '    <th colspan="5">Teams</th>\n'
     for mentor in list_of_mentors:
         html += '  <tr>\n'
         html += '    <th>{}</th>\n'.format(mentor)
