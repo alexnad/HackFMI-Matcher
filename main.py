@@ -18,6 +18,8 @@ def main():
     html += '  <tr>\n'
     html += '    <th>Mentors</th>\n'
     html += '    <th colspan="5">Teams</th>\n'
+    html += '    <th colspan="100%">Teams on Queue</th>\n'
+    html += '  </tr>\n'
     for mentor in list_of_mentors:
         html += '  <tr>\n'
         html += '    <th>{}</th>\n'.format(mentor)
