@@ -24,6 +24,7 @@ def main():
 
     html += '</table>'
     file.write(html)
+    file.close()
 
 if __name__ == "__main__":
     main()

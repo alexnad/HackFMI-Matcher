@@ -56,5 +56,5 @@ target/
 #Added by Niki
 mentors.md
 *.swp
-*.csv
+example.csv
 mentors.html
