@@ -19,7 +19,7 @@ def main():
         html += '  <tr>\n'
         html += '    <th>{}</th>\n'.format(mentor)
         for team in mentor.teams:
-            html += '    <td>{}</td>\n'.format(team)
+            html += '    <td><p>{}</p><p>{}</p></td>\n'.format(team, team.room)
         html += '  </tr>\n'
 
     html += '</table>'
